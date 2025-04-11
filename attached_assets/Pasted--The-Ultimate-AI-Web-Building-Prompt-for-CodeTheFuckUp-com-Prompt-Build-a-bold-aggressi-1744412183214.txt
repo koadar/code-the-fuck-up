@@ -1,0 +1,125 @@
+
+
+The Ultimate AI Web-Building Prompt for CodeTheFuckUp.com
+
+> Prompt:
+
+Build a bold, aggressive, unapologetically real website called CodeTheFuckUp.com — a no-bullshit platform for software developers tired of fake tech influencer culture, over-polished tutorials, and corporate vanilla blog posts.
+
+Tone and Brand Identity:
+
+Ruthless honesty
+
+Dark humor
+
+Rant energy
+
+Anti-influencer, anti-cringe, anti-buzzword
+
+Street-smart meets tech-smart
+
+
+Think of it as a punk-rock dev blog meets underground tech cult — edgy, hilarious, brutally honest, and deeply relatable to real devs in the trenches.
+
+Design Requirements:
+
+Dark theme with gritty, sharp edges
+
+Use bold typography, all-caps for titles
+
+Animated console-style typing effect in headers
+
+“Error-glitch” effects on hover for buttons
+
+Terminal-style quotes and comment callouts
+
+Trash bin icon that deletes entire blog post drafts
+
+“Fuck It Mode” – toggles a chaotic, no-filter version of the site with NSFW rants and real-life dev disasters
+
+
+Core Sections:
+
+1. Hot Rants – Raw blog posts about the real dev life
+
+
+2. Tech Lies We Swallowed – Bust myths, influencer lies, and fake job titles
+
+
+3. Cringe Gallery – Screenshots of awful LinkedIn flexes and resume disasters
+
+
+4. Real Devs, Real Shit – User-submitted stories of failure, burnout, and breakthroughs
+
+
+5. Build. Burn. Rebuild. – Coding stories that went wrong but taught lessons
+
+
+6. Anti-Guru Guide – Parody of influencer-style courses with “zero value” promises
+
+
+
+Blog Titles to Seed the Site With:
+
+“The Tech Influencer Lied and I Believed It”
+
+“Code Like You're Dead Inside”
+
+“Microservices Made Me Hate Life”
+
+“Fuck Your Coding Bootcamp Success Story”
+
+“They Said It Was Agile, We Got Whiplash”
+
+“Why Every Dev Should Break Production At Least Once”
+
+“Centering a Div Gave Me PTSD”
+
+“I Put ‘Blockchain’ on My Resume and Got Hired”
+
+“Tutorial Hell: The Netflix of Productivity”
+
+“Git Blame is My Therapist”
+
+“No One Cares About Your 100 Days of Code Thread”
+
+
+Crazy Features to Include:
+
+Rage Comment Mode: Add profanity-laced reactions (toggle safe mode for SFW users)
+
+Real Resume Builder: Builds a CV that’s 80% sarcasm, 20% truth, 100% relatable
+
+LinkedIn Filter: A widget that auto-generates sarcastic reactions to buzzword-heavy posts
+
+“Deploy or Die” Button: A random motivational/dev-spiral quote each time it's clicked
+
+Daily Fuck-Up Generator: Confessions from devs about their biggest mistakes
+
+“Code Confession Booth”: Anonymously submit dev sins (e.g., pushed to prod without tests)
+
+404 Page: Looks like a crashed IDE. “You broke it. Good job.”
+
+Rant-to-Blog Converter: Paste your chat log/rant, and the site formats it into an aggressive blog post
+
+Glitchy Easter Eggs: Hidden terminal-style games or commands like $ fuckup --rant or $ roast-guru <name>
+
+
+
+
+
+Goals of the Site:
+
+Call out the fakeness in tech culture
+
+Be a safe, brutally honest space for devs
+
+Educate with sarcasm and real experience
+
+Build a cult following through shared trauma, truth, and laughs
+
+Let devs Code The Fuck Up — not just code perfectly
+
+
+
+
