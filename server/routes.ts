@@ -10,6 +10,10 @@ import {
 } from "@shared/schema";
 import { z } from "zod";
 
+function isValidInteger(value: string | undefined): boolean {
+  return typeof value === "string" && /^-?\d+$/.test(value);
+}
+
 export async function registerRoutes(app: Express): Promise<Server> {
   // API Routes
   
@@ -26,8 +30,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Posts/Rants routes
   app.get("/api/posts", async (req, res) => {
     try {
-      const limit = req.query.limit ? parseInt(req.query.limit as string) : 10;
-      const offset = req.query.offset ? parseInt(req.query.offset as string) : 0;
+      const limitParam = req.query.limit as string | undefined;
+      if (limitParam !== undefined && !isValidInteger(limitParam)) {
+        return res.status(400).json({ message: "Invalid limit parameter" });
+      }
+      const offsetParam = req.query.offset as string | undefined;
+      if (offsetParam !== undefined && !isValidInteger(offsetParam)) {
+        return res.status(400).json({ message: "Invalid offset parameter" });
+      }
+
+      const limit = limitParam ? parseInt(limitParam, 10) : 10;
+      const offset = offsetParam ? parseInt(offsetParam, 10) : 0;
       const posts = await storage.getPosts(limit, offset);
       res.json(posts);
     } catch (error) {
@@ -37,7 +50,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   
   app.get("/api/posts/hot", async (req, res) => {
     try {
-      const limit = req.query.limit ? parseInt(req.query.limit as string) : 10;
+      const limitParam = req.query.limit as string | undefined;
+      if (limitParam !== undefined && !isValidInteger(limitParam)) {
+        return res.status(400).json({ message: "Invalid limit parameter" });
+      }
+
+      const limit = limitParam ? parseInt(limitParam, 10) : 10;
       const hotPosts = await storage.getHotPosts(limit);
       res.json(hotPosts);
     } catch (error) {
@@ -48,8 +66,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/categories/:slug/posts", async (req, res) => {
     try {
       const { slug } = req.params;
-      const limit = req.query.limit ? parseInt(req.query.limit as string) : 10;
-      const offset = req.query.offset ? parseInt(req.query.offset as string) : 0;
+      const limitParam = req.query.limit as string | undefined;
+      if (limitParam !== undefined && !isValidInteger(limitParam)) {
+        return res.status(400).json({ message: "Invalid limit parameter" });
+      }
+      const offsetParam = req.query.offset as string | undefined;
+      if (offsetParam !== undefined && !isValidInteger(offsetParam)) {
+        return res.status(400).json({ message: "Invalid offset parameter" });
+      }
+
+      const limit = limitParam ? parseInt(limitParam, 10) : 10;
+      const offset = offsetParam ? parseInt(offsetParam, 10) : 0;
       
       const category = await storage.getCategoryBySlug(slug);
       if (!category) {
@@ -93,7 +120,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
   
   app.post("/api/posts/:id/heat", async (req, res) => {
     try {
-      const id = parseInt(req.params.id);
+      const idParam = req.params.id;
+      if (!isValidInteger(idParam)) {
+        return res.status(400).json({ message: "Invalid post ID" });
+      }
+      const id = parseInt(idParam, 10);
       const success = await storage.incrementHeatCount(id);
       
       if (!success) {
@@ -110,7 +141,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Comments routes
   app.get("/api/posts/:postId/comments", async (req, res) => {
     try {
-      const postId = parseInt(req.params.postId);
+      const postIdParam = req.params.postId;
+      if (!isValidInteger(postIdParam)) {
+        return res.status(400).json({ message: "Invalid post ID" });
+      }
+      const postId = parseInt(postIdParam, 10);
       const comments = await storage.getCommentsByPost(postId);
       res.json(comments);
     } catch (error) {
@@ -134,8 +169,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Gallery routes
   app.get("/api/gallery", async (req, res) => {
     try {
-      const limit = req.query.limit ? parseInt(req.query.limit as string) : 10;
-      const offset = req.query.offset ? parseInt(req.query.offset as string) : 0;
+      const limitParam = req.query.limit as string | undefined;
+      if (limitParam !== undefined && !isValidInteger(limitParam)) {
+        return res.status(400).json({ message: "Invalid limit parameter" });
+      }
+      const offsetParam = req.query.offset as string | undefined;
+      if (offsetParam !== undefined && !isValidInteger(offsetParam)) {
+        return res.status(400).json({ message: "Invalid offset parameter" });
+      }
+
+      const limit = limitParam ? parseInt(limitParam, 10) : 10;
+      const offset = offsetParam ? parseInt(offsetParam, 10) : 0;
       const items = await storage.getGalleryItems(limit, offset);
       res.json(items);
     } catch (error) {
