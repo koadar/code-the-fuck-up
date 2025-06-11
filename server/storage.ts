@@ -235,8 +235,9 @@ export class MemStorage implements IStorage {
       { name: "Cringe Gallery", slug: "cringe-gallery" },
       { name: "Real Devs", slug: "real-devs" },
       { name: "Build Burn Rebuild", slug: "build-burn-rebuild" },
-      { name: "Anti-Guru", slug: "anti-guru" }
+      { name: "Anti-Guru", slug: "anti-guru" },
     ];
+
     
     defaultCategories.forEach((cat) => {
       this.createCategory(cat);
