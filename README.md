@@ -35,3 +35,20 @@ npm start
 
 Ensure that `DATABASE_URL` is defined in your environment before running migrations or the server.
 
+## Deploying to GitHub Pages
+
+To host the static frontend on GitHub Pages:
+
+1. Edit `vite.config.ts` and set the `base` option to the repository name:
+
+   ```ts
+   export default defineConfig({
+     base: "/code-the-fuck-up/",
+     // ...
+   })
+   ```
+
+2. Commit your changes and push to the `main` branch.
+3. GitHub Actions will build the project and deploy the files from `dist/public` to the `gh-pages` environment.
+4. Enable GitHub Pages in your repository settings and choose **GitHub Actions** as the source.
+
