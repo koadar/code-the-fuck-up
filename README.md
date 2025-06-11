@@ -34,3 +34,4 @@ npm start
 ```
 
 Ensure that `DATABASE_URL` is defined in your environment before running migrations or the server.
+

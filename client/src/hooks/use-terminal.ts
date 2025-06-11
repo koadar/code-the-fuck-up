@@ -114,7 +114,7 @@ export function useTerminal() {
   
   useEffect(() => {
     const handleKeydown = (e: KeyboardEvent) => {
-      // Alt + T to toggle terminal
+      // Alt + t to toggle terminal
       if (e.altKey && e.key === 't') {
         toggleTerminal();
       }
