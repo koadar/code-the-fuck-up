@@ -21,10 +21,11 @@ export default function NotFound() {
             You broke it. Good job. This page doesn't exist or you typed some garbage URL.
           </p>
           
-          <Link href="/">
-            <a className="text-secondary hover:text-white transition-colors font-code">
-              &lt; GO BACK TO SAFETY
-            </a>
+          <Link
+            href="/"
+            className="text-secondary hover:text-white transition-colors font-code"
+          >
+            &lt; GO BACK TO SAFETY
           </Link>
         </CardContent>
       </Card>
