@@ -235,12 +235,13 @@ export class MemStorage implements IStorage {
       { name: "Cringe Gallery", slug: "cringe-gallery" },
       { name: "Real Devs", slug: "real-devs" },
       { name: "Build Burn Rebuild", slug: "build-burn-rebuild" },
-      { name: "Anti-Guru", slug: "anti-guru" }
+      { name: "Anti-Guru", slug: "anti-guru" },
     ];
-    
-    defaultCategories.forEach(async (cat) => {
-      await this.createCategory(cat);
-    });
+
+    for (const cat of defaultCategories) {
+      const id = this.categoryIdCounter++;
+      this.categories.set(id, { ...cat, id });
+    }
   }
 }
 
