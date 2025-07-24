@@ -4,12 +4,24 @@ import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/NotFound";
 import Home from "@/pages/Home";
+import Rants from "@/pages/Rants";
+import TechLiesPage from "@/pages/TechLiesPage";
+import CringeGalleryPage from "@/pages/CringeGalleryPage";
+import RealDevsPage from "@/pages/RealDevsPage";
+import SubmitCringe from "@/pages/SubmitCringe";
+import SubmitStory from "@/pages/SubmitStory";
 import { useEffect, useState } from "react";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/rants" component={Rants} />
+      <Route path="/tech-lies" component={TechLiesPage} />
+      <Route path="/cringe" component={CringeGalleryPage} />
+      <Route path="/real-devs" component={RealDevsPage} />
+      <Route path="/submit-cringe" component={SubmitCringe} />
+      <Route path="/submit-story" component={SubmitStory} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -1,12 +1,14 @@
 import TerminalBox from "@/components/ui/TerminalBox";
 import GlitchButton from "@/components/ui/GlitchButton";
 import { devStories } from "@/lib/data";
+import { useLocation } from "wouter";
 
 interface RealDevsProps {
   fuckItMode: boolean;
 }
 
 export default function RealDevs({ fuckItMode }: RealDevsProps) {
+  const [, navigate] = useLocation();
   return (
     <section id="real-devs" className="py-16 bg-[#181818]">
       <div className="container mx-auto px-4">
@@ -23,7 +25,7 @@ export default function RealDevs({ fuckItMode }: RealDevsProps) {
             <GlitchButton
               className="bg-primary text-black font-bold py-2 px-4"
               text="SUBMIT YOUR STORY"
-              onClick={() => {}}
+              onClick={() => navigate('/submit-story')}
             >
               SUBMIT YOUR STORY <i className="ri-arrow-right-line ml-1"></i>
             </GlitchButton>

@@ -1,6 +1,7 @@
 import TerminalBox from "@/components/ui/TerminalBox";
 import BlogCard from "@/components/ui/BlogCard";
 import { useEffect, useState } from "react";
+import { Link } from "wouter";
 import { hotRants } from "@/lib/data";
 
 interface HotRantsProps {
@@ -34,10 +35,10 @@ export default function HotRants({ fuckItMode }: HotRantsProps) {
             <p className="text-gray-400 font-code">Raw blog posts about the real dev life, no filter, no bullshit.</p>
           </div>
           <div className="w-full md:w-1/2 md:text-right mt-6 md:mt-0">
-            <a href="#" className="inline-flex items-center text-secondary hover:text-white transition duration-200">
+            <Link href="/rants" className="inline-flex items-center text-secondary hover:text-white transition duration-200">
               <span className="mr-2 font-code">VIEW ALL RANTS</span>
               <i className="ri-arrow-right-line"></i>
-            </a>
+            </Link>
           </div>
         </div>
 

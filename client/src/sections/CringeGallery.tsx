@@ -1,6 +1,7 @@
 import TerminalBox from "@/components/ui/TerminalBox";
 import ImageGlitch from "@/components/ui/ImageGlitch";
 import { cringeGallery } from "@/lib/data";
+import { Link } from "wouter";
 
 interface CringeGalleryProps {
   fuckItMode: boolean;
@@ -20,10 +21,10 @@ export default function CringeGallery({ fuckItMode }: CringeGalleryProps) {
             <p className="text-gray-400 font-code">Screenshots of awful LinkedIn flexes, resume disasters, and self-important tech posts that make us all die inside.</p>
           </div>
           <div className="w-full md:w-1/2 md:text-right mt-6 md:mt-0">
-            <a href="#" className="inline-flex items-center text-secondary hover:text-white transition duration-200">
+            <Link href="/submit-cringe" className="inline-flex items-center text-secondary hover:text-white transition duration-200">
               <span className="mr-2 font-code">SUBMIT YOUR CRINGE</span>
               <i className="ri-arrow-right-line"></i>
-            </a>
+            </Link>
           </div>
         </div>
 

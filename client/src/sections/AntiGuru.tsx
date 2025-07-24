@@ -51,7 +51,7 @@ export default function AntiGuru() {
                   <GlitchButton
                     className="bg-primary text-black font-bold py-2 px-6"
                     text={guru.buttonText}
-                    onClick={() => {}}
+                    onClick={() => alert('This does nothing, thankfully.')}
                   >
                     {guru.buttonText}
                   </GlitchButton>

@@ -16,16 +16,16 @@ export default function Footer() {
             </Link>
             <p className="text-gray-400 font-code mb-4">A no-bullshit platform for developers tired of fake tech influencer culture, over-polished tutorials, and corporate vanilla bullshit.</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://twitter.com" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                 <i className="ri-twitter-fill text-xl"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://github.com" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                 <i className="ri-github-fill text-xl"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://discord.com" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                 <i className="ri-discord-fill text-xl"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://reddit.com" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                 <i className="ri-reddit-fill text-xl"></i>
               </a>
             </div>

@@ -1,5 +1,6 @@
 import TerminalBox from "@/components/ui/TerminalBox";
 import { techLies } from "@/lib/data";
+import { Link } from "wouter";
 
 interface TechLiesProps {
   fuckItMode: boolean;
@@ -19,10 +20,10 @@ export default function TechLies({ fuckItMode }: TechLiesProps) {
             <p className="text-gray-400 font-code">Busting myths, influencer lies, and fake job titles one painful truth at a time.</p>
           </div>
           <div className="w-full md:w-1/2 md:text-right mt-6 md:mt-0">
-            <a href="#" className="inline-flex items-center text-secondary hover:text-white transition duration-200">
+            <Link href="/tech-lies" className="inline-flex items-center text-secondary hover:text-white transition duration-200">
               <span className="mr-2 font-code">VIEW ALL TECH LIES</span>
               <i className="ri-arrow-right-line"></i>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -37,7 +38,7 @@ export default function TechLies({ fuckItMode }: TechLiesProps) {
               </div>
               <p className="text-gray-400 font-code mb-6">{lie.content}</p>
               <div className="flex items-center justify-between">
-                <a href="#" className="text-secondary font-code hover:text-white transition">READ FULL TAKEDOWN →</a>
+                <Link href="/tech-lies" className="text-secondary font-code hover:text-white transition">READ FULL TAKEDOWN →</Link>
                 <div className="flex items-center">
                   <button className="mr-3 text-gray-400 hover:text-primary">
                     <i className="ri-thumb-up-line"></i>
