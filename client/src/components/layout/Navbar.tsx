@@ -10,6 +10,14 @@ interface NavbarProps {
 export default function Navbar({ fuckItMode, toggleFuckItMode }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header className="bg-[#121212] sticky top-0 z-50 border-b border-[#2a2a2a] shadow-md">
       <nav className="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
@@ -25,36 +33,36 @@ export default function Navbar({ fuckItMode, toggleFuckItMode }: NavbarProps) {
         </div>
         
         <div className={`${mobileMenuOpen ? 'flex' : 'hidden'} md:flex items-center space-x-6 text-sm font-code flex-col md:flex-row absolute md:static top-16 left-0 right-0 bg-[#121212] md:bg-transparent p-4 md:p-0 border-b md:border-0 border-[#2a2a2a] gap-4 md:gap-0`}>
-          <Link
-            href="/"
-            className="nav-link active text-white hover:text-secondary uppercase"
+          <button
+            onClick={() => scrollToSection('hot-rants')}
+            className="nav-link text-white hover:text-secondary uppercase"
           >
             HOT RANTS
-          </Link>
-          <Link
-            href="/"
+          </button>
+          <button
+            onClick={() => scrollToSection('tech-lies')}
             className="nav-link text-white hover:text-secondary uppercase"
           >
             TECH LIES
-          </Link>
-          <Link
-            href="/"
+          </button>
+          <button
+            onClick={() => scrollToSection('cringe-gallery')}
             className="nav-link text-white hover:text-secondary uppercase"
           >
             CRINGE GALLERY
-          </Link>
-          <Link
-            href="/"
+          </button>
+          <button
+            onClick={() => scrollToSection('real-devs')}
             className="nav-link text-white hover:text-secondary uppercase"
           >
             REAL DEVS
-          </Link>
-          <Link
-            href="/"
+          </button>
+          <button
+            onClick={() => scrollToSection('features')}
             className="nav-link text-white hover:text-secondary uppercase"
           >
             BUILD.BURN
-          </Link>
+          </button>
         </div>
         
         <div className="flex items-center">

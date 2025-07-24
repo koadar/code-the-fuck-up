@@ -45,10 +45,16 @@ export default function Hero() {
               >
                 DEPLOY OR DIE <i className="ri-rocket-2-fill ml-1"></i>
               </GlitchButton>
-              <a href="#" className="inline-flex items-center text-secondary hover:text-white transition duration-200 mb-4 md:mb-0">
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('newsletter');
+                  if (element) element.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center text-secondary hover:text-white transition duration-200 mb-4 md:mb-0"
+              >
                 <span className="mr-2 font-code">CONFESS YOUR CODE SINS</span>
                 <i className="ri-arrow-right-line"></i>
-              </a>
+              </button>
             </div>
           </div>
           <div className="md:w-1/2">

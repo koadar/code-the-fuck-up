@@ -18,13 +18,25 @@ export default function Home() {
       <Navbar fuckItMode={fuckItMode} toggleFuckItMode={() => setFuckItMode(!fuckItMode)} />
       <main>
         <Hero />
-        <HotRants fuckItMode={fuckItMode} />
-        <TechLies fuckItMode={fuckItMode} />
-        <CringeGallery fuckItMode={fuckItMode} />
-        <RealDevs fuckItMode={fuckItMode} />
-        <Features />
+        <section id="hot-rants">
+          <HotRants fuckItMode={fuckItMode} />
+        </section>
+        <section id="tech-lies">
+          <TechLies fuckItMode={fuckItMode} />
+        </section>
+        <section id="cringe-gallery">
+          <CringeGallery fuckItMode={fuckItMode} />
+        </section>
+        <section id="real-devs">
+          <RealDevs fuckItMode={fuckItMode} />
+        </section>
+        <section id="features">
+          <Features />
+        </section>
         <AntiGuru />
-        <Newsletter />
+        <section id="newsletter">
+          <Newsletter />
+        </section>
       </main>
       <Footer />
     </>

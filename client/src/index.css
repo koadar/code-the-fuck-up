@@ -92,7 +92,7 @@
   }
 
   .nav-link {
-    @apply relative transition-all duration-200;
+    @apply relative transition-all duration-200 bg-transparent border-none cursor-pointer;
   }
 
   .nav-link::before {
@@ -120,6 +120,52 @@
   .typing-text {
     @apply overflow-hidden whitespace-nowrap border-r-[3px] border-solid border-[#39ff14];
     animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+  }
+
+  /* Glitch Button Effects */
+  .glitch-btn:hover::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    top: 0;
+    color: #ff3e3e;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 0, 0, 0);
+    animation: glitch 0.3s linear infinite;
+  }
+  
+  .glitch-btn:hover::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    top: 0;
+    color: #00ff8c;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 0, 0, 0);
+    animation: glitch 0.2s linear reverse infinite;
+  }
+
+  /* Glitch Text Effects */
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+  }
+  
+  .glitch-text::before {
+    color: #ff3e3e;
+    animation: glitch-animation 2s infinite linear alternate-reverse;
+  }
+  
+  .glitch-text::after {
+    color: #00ff8c;
+    animation: glitch-animation 3s infinite linear alternate;
   }
 
   .image-glitch::before {
