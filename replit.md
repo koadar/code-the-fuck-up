@@ -18,6 +18,10 @@ This project is being migrated from Replit Agent to the standard Replit environm
 - **2025-01-24**: Implemented scroll-to-section navigation system
 - **2025-01-24**: Added CSS animations for glitch effects in index.css
 - **2025-01-24**: Fixed all navigation buttons and links functionality
+- **2025-01-24**: Added "LPA: Lies Per Annum" blog post about salary inflation scams
+- **2025-01-24**: Updated README with comprehensive GitHub Pages deployment instructions
+- **2025-01-24**: Created GitHub Actions workflow for static site deployment
+- **2025-01-24**: Enhanced all interactive features with backend API integration
 
 ## User Preferences
 - No specific preferences documented yet
