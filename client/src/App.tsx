@@ -8,6 +8,8 @@ import AllRants from "@/pages/AllRants";
 import AllTechLies from "@/pages/AllTechLies";
 import SubmitCringe from "@/pages/SubmitCringe";
 import SubmitStory from "@/pages/SubmitStory";
+import RantDetail from "@/pages/RantDetail";
+import TechLieDetail from "@/pages/TechLieDetail";
 import { useEffect, useState } from "react";
 
 function Router() {
@@ -15,7 +17,9 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/rants" component={AllRants} />
+      <Route path="/rants/:slug" component={RantDetail} />
       <Route path="/tech-lies" component={AllTechLies} />
+      <Route path="/tech-lies/:slug" component={TechLieDetail} />
       <Route path="/submit-cringe" component={SubmitCringe} />
       <Route path="/submit-story" component={SubmitStory} />
       <Route component={NotFound} />

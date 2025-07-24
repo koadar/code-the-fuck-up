@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Link } from "wouter";
 
 interface Author {
   name: string;
@@ -14,6 +15,8 @@ interface BlogCardProps {
   author: Author;
   className?: string;
   category?: string;
+  slug?: string;
+  index?: number;
 }
 
 export default function BlogCard({
@@ -23,11 +26,16 @@ export default function BlogCard({
   heatCount,
   author,
   className = "",
-  category = "RANT"
+  category = "RANT",
+  slug,
+  index = 0
 }: BlogCardProps) {
+  const blogSlug = slug || title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const blogUrl = category === "RANT" ? `/rants/${blogSlug}` : `/tech-lies/${blogSlug}`;
+
   return (
-    <div className={cn(
-      "blog-card bg-[#1a1a1a] rounded-lg overflow-hidden shadow-lg",
+    <Link href={blogUrl} className={cn(
+      "blog-card bg-[#1a1a1a] rounded-lg overflow-hidden shadow-lg block hover:scale-105 transition-transform cursor-pointer",
       className
     )}>
       <div className="p-6">
@@ -48,6 +56,6 @@ export default function BlogCard({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

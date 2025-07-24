@@ -67,6 +67,7 @@ export default function HotRants({ fuckItMode }: HotRantsProps) {
               heatCount={rant.heatCount}
               author={rant.author}
               category="RANT"
+              index={index}
             />
           ))}
         </div>

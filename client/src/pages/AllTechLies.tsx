@@ -71,7 +71,8 @@ export default function AllTechLies() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {getFilteredLies().map((lie, index) => (
-            <div key={index} className="bg-[#1a1a1a] p-6 rounded-lg shadow-lg slanted-bg">
+            <div key={index} className="bg-[#1a1a1a] p-6 rounded-lg shadow-lg slanted-bg hover:scale-105 transition-transform cursor-pointer"
+                 onClick={() => window.location.href = `/tech-lies/${lie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}>
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mr-4">
                   <i className="ri-error-warning-fill text-2xl text-primary"></i>
@@ -81,7 +82,7 @@ export default function AllTechLies() {
               <p className="text-gray-400 font-code mb-6">{lie.content}</p>
               <div className="flex items-center justify-between">
                 <Link 
-                  href={`/tech-lies/${index}`}
+                  href={`/tech-lies/${lie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                   className="text-secondary font-code hover:text-white transition"
                 >
                   READ FULL TAKEDOWN →
