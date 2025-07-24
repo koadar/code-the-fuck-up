@@ -10,6 +10,11 @@ import CringeGalleryPage from "@/pages/CringeGalleryPage";
 import RealDevsPage from "@/pages/RealDevsPage";
 import SubmitCringe from "@/pages/SubmitCringe";
 import SubmitStory from "@/pages/SubmitStory";
+import RageModePage from "@/pages/RageModePage";
+import ResumeBuilderPage from "@/pages/ResumeBuilderPage";
+import LinkedInFilterPage from "@/pages/LinkedInFilterPage";
+import FuckupGeneratorPage from "@/pages/FuckupGeneratorPage";
+import ConfessionBoothPage from "@/pages/ConfessionBoothPage";
 import { useEffect, useState } from "react";
 
 function Router() {
@@ -22,6 +27,11 @@ function Router() {
       <Route path="/real-devs" component={RealDevsPage} />
       <Route path="/submit-cringe" component={SubmitCringe} />
       <Route path="/submit-story" component={SubmitStory} />
+      <Route path="/rage-mode" component={RageModePage} />
+      <Route path="/resume-builder" component={ResumeBuilderPage} />
+      <Route path="/linkedin-filter" component={LinkedInFilterPage} />
+      <Route path="/fuckups" component={FuckupGeneratorPage} />
+      <Route path="/confess" component={ConfessionBoothPage} />
       <Route component={NotFound} />
     </Switch>
   );

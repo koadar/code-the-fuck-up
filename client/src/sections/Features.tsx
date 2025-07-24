@@ -1,6 +1,7 @@
 import TerminalBox from "@/components/ui/TerminalBox";
 import { features } from "@/lib/data";
 import { useState } from "react";
+import { Link } from "wouter";
 
 export default function Features() {
   const [showDeployModal, setShowDeployModal] = useState(false);
@@ -51,7 +52,22 @@ export default function Features() {
                   {feature.buttonText}
                 </button>
               ) : (
-                <a href="#" className="text-secondary font-code hover:text-white transition text-sm">{feature.buttonText}</a>
+                <Link
+                  href={
+                    feature.id === 'rage-mode'
+                      ? '/rage-mode'
+                      : feature.id === 'resume-builder'
+                      ? '/resume-builder'
+                      : feature.id === 'linkedin-filter'
+                      ? '/linkedin-filter'
+                      : feature.id === 'fuckup-generator'
+                      ? '/fuckups'
+                      : '/confess'
+                  }
+                  className="text-secondary font-code hover:text-white transition text-sm"
+                >
+                  {feature.buttonText}
+                </Link>
               )}
             </div>
           ))}

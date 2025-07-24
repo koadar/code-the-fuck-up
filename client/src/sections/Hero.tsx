@@ -3,6 +3,7 @@ import GlitchText from "@/components/ui/GlitchText";
 import TypingText from "@/components/ui/TypingText";
 import ImageGlitch from "@/components/ui/ImageGlitch";
 import { useState } from "react";
+import { Link } from "wouter";
 
 export default function Hero() {
   const [showQuoteModal, setShowQuoteModal] = useState(false);
@@ -45,10 +46,13 @@ export default function Hero() {
               >
                 DEPLOY OR DIE <i className="ri-rocket-2-fill ml-1"></i>
               </GlitchButton>
-              <a href="#" className="inline-flex items-center text-secondary hover:text-white transition duration-200 mb-4 md:mb-0">
+              <Link
+                href="/confess"
+                className="inline-flex items-center text-secondary hover:text-white transition duration-200 mb-4 md:mb-0"
+              >
                 <span className="mr-2 font-code">CONFESS YOUR CODE SINS</span>
                 <i className="ri-arrow-right-line"></i>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="md:w-1/2">
