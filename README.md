@@ -62,6 +62,9 @@ npm run build:static
    - Select "Deploy from a branch"
    - Choose the branch containing your `dist` folder
    - Set folder to `/dist` or `/docs` depending on your setup
+   - If you cannot run the build locally, you can commit a basic `docs/index.html`
+     placeholder so GitHub Pages has an `index.html` to serve while the workflow
+     builds the real site.
 
 4. **GitHub Actions workflow** (`.github/workflows/static.yml`) is already included:
 ```yaml
