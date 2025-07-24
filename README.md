@@ -17,6 +17,10 @@ npm install
 npm run dev
 ```
 
+On Windows, make sure your environment variables work by using `cross-env` (already
+included in the project). Running the above commands from PowerShell or CMD will
+work out of the box.
+
 The server listens on port **5000** by default.
 
 ## Building and Starting
@@ -32,6 +36,9 @@ Start the production server:
 ```bash
 npm start
 ```
+
+Both development and production scripts set the `NODE_ENV` variable using
+`cross-env` so they run correctly on Windows, macOS and Linux.
 
 Ensure that `DATABASE_URL` is defined in your environment before running migrations or the server.
 
