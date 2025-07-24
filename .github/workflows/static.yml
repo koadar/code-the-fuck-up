@@ -31,7 +31,7 @@ jobs:
       run: npm ci
       
     - name: Build for static deployment
-      run: npx vite build --outDir dist
+      run: npm run build:static
       
     - name: Setup Pages
       uses: actions/configure-pages@v4

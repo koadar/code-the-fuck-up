@@ -63,7 +63,7 @@ npm run build:static
    - Choose the branch containing your `dist` folder
    - Set folder to `/dist` or `/docs` depending on your setup
 
-4. **Add GitHub Actions workflow** (`.github/workflows/deploy.yml`):
+4. **GitHub Actions workflow** (`.github/workflows/static.yml`) is already included:
 ```yaml
 name: Deploy to GitHub Pages
 
