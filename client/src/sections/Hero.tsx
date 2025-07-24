@@ -22,7 +22,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden bg-[#181818]">
+    <section id="hero" className="relative py-20 overflow-hidden bg-[#181818]">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-10 md:mb-0">

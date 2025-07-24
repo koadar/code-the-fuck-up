@@ -8,10 +8,13 @@ import Features from "@/sections/Features";
 import AntiGuru from "@/sections/AntiGuru";
 import Newsletter from "@/sections/Newsletter";
 import Footer from "@/components/layout/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [fuckItMode, setFuckItMode] = useState(false);
+  useEffect(() => {
+    document.body.classList.toggle("fuck-it-mode", fuckItMode);
+  }, [fuckItMode]);
 
   return (
     <>

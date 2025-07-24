@@ -46,6 +46,10 @@
   body {
     @apply font-code antialiased bg-background text-foreground overflow-x-hidden;
   }
+
+  body.fuck-it-mode {
+    filter: invert(1) hue-rotate(180deg);
+  }
 }
 
 @layer utilities {

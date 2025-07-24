@@ -34,12 +34,12 @@ export default function Footer() {
           <div className="w-full md:w-1/4 mb-8 md:mb-0">
             <h3 className="text-white font-bold font-mono mb-4 uppercase">CONTENT</h3>
             <ul className="text-gray-400 font-code space-y-2">
-              <li><Link href="/" className="hover:text-white">Hot Rants</Link></li>
-              <li><Link href="/" className="hover:text-white">Tech Lies We Swallowed</Link></li>
-              <li><Link href="/" className="hover:text-white">Cringe Gallery</Link></li>
-              <li><Link href="/" className="hover:text-white">Real Devs, Real Shit</Link></li>
-              <li><Link href="/" className="hover:text-white">Build. Burn. Rebuild.</Link></li>
-              <li><Link href="/" className="hover:text-white">Anti-Guru Guide</Link></li>
+              <li><a href="#hot-rants" className="hover:text-white">Hot Rants</a></li>
+              <li><a href="#tech-lies" className="hover:text-white">Tech Lies We Swallowed</a></li>
+              <li><a href="#cringe-gallery" className="hover:text-white">Cringe Gallery</a></li>
+              <li><a href="#real-devs" className="hover:text-white">Real Devs, Real Shit</a></li>
+              <li><a href="#features" className="hover:text-white">Build. Burn. Rebuild.</a></li>
+              <li><a href="#anti-guru" className="hover:text-white">Anti-Guru Guide</a></li>
             </ul>
           </div>
           

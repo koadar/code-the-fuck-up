@@ -25,36 +25,21 @@ export default function Navbar({ fuckItMode, toggleFuckItMode }: NavbarProps) {
         </div>
         
         <div className={`${mobileMenuOpen ? 'flex' : 'hidden'} md:flex items-center space-x-6 text-sm font-code flex-col md:flex-row absolute md:static top-16 left-0 right-0 bg-[#121212] md:bg-transparent p-4 md:p-0 border-b md:border-0 border-[#2a2a2a] gap-4 md:gap-0`}>
-          <Link
-            href="/"
-            className="nav-link active text-white hover:text-secondary uppercase"
-          >
+          <a href="#hot-rants" className="nav-link active text-white hover:text-secondary uppercase">
             HOT RANTS
-          </Link>
-          <Link
-            href="/"
-            className="nav-link text-white hover:text-secondary uppercase"
-          >
+          </a>
+          <a href="#tech-lies" className="nav-link text-white hover:text-secondary uppercase">
             TECH LIES
-          </Link>
-          <Link
-            href="/"
-            className="nav-link text-white hover:text-secondary uppercase"
-          >
+          </a>
+          <a href="#cringe-gallery" className="nav-link text-white hover:text-secondary uppercase">
             CRINGE GALLERY
-          </Link>
-          <Link
-            href="/"
-            className="nav-link text-white hover:text-secondary uppercase"
-          >
+          </a>
+          <a href="#real-devs" className="nav-link text-white hover:text-secondary uppercase">
             REAL DEVS
-          </Link>
-          <Link
-            href="/"
-            className="nav-link text-white hover:text-secondary uppercase"
-          >
+          </a>
+          <a href="#features" className="nav-link text-white hover:text-secondary uppercase">
             BUILD.BURN
-          </Link>
+          </a>
         </div>
         
         <div className="flex items-center">

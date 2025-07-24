@@ -23,7 +23,7 @@ export default function Features() {
   };
 
   return (
-    <section className="py-16 bg-[#121212]">
+    <section id="features" className="py-16 bg-[#121212]">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <TerminalBox 

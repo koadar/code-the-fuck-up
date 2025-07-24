@@ -5,7 +5,7 @@ import { antiGurus } from "@/lib/data";
 
 export default function AntiGuru() {
   return (
-    <section className="py-16 bg-[#181818] relative">
+    <section id="anti-guru" className="py-16 bg-[#181818] relative">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row mb-12">
           <div className="w-full md:w-1/2">

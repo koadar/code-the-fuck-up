@@ -8,7 +8,7 @@ interface RealDevsProps {
 
 export default function RealDevs({ fuckItMode }: RealDevsProps) {
   return (
-    <section className="py-16 bg-[#181818]">
+    <section id="real-devs" className="py-16 bg-[#181818]">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row mb-12">
           <div className="w-full md:w-1/2">

@@ -15,7 +15,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-16 bg-[#121212]">
+    <section id="newsletter" className="py-16 bg-[#121212]">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <TerminalBox 

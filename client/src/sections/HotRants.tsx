@@ -22,7 +22,7 @@ export default function HotRants({ fuckItMode }: HotRantsProps) {
   }, [fuckItMode]);
 
   return (
-    <section className="py-16 bg-[#121212]">
+    <section id="hot-rants" className="py-16 bg-[#121212]">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row mb-12">
           <div className="w-full md:w-1/2">
