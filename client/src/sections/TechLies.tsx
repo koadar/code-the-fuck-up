@@ -1,5 +1,6 @@
 import TerminalBox from "@/components/ui/TerminalBox";
 import { techLies } from "@/lib/data";
+import { Link } from "wouter";
 
 interface TechLiesProps {
   fuckItMode: boolean;
@@ -19,15 +20,13 @@ export default function TechLies({ fuckItMode }: TechLiesProps) {
             <p className="text-gray-400 font-code">Busting myths, influencer lies, and fake job titles one painful truth at a time.</p>
           </div>
           <div className="w-full md:w-1/2 md:text-right mt-6 md:mt-0">
-            <button 
-              onClick={() => {
-                alert("💀 COMING SOON: Complete database of industry bullshit with lie severity ratings!");
-              }}
+            <Link
+              href="/tech-lies"
               className="inline-flex items-center text-secondary hover:text-white transition duration-200"
             >
               <span className="mr-2 font-code">VIEW ALL TECH LIES</span>
               <i className="ri-arrow-right-line"></i>
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -42,12 +41,12 @@ export default function TechLies({ fuckItMode }: TechLiesProps) {
               </div>
               <p className="text-gray-400 font-code mb-6">{lie.content}</p>
               <div className="flex items-center justify-between">
-                <button 
-                  onClick={() => alert(`📖 FULL TAKEDOWN: "${lie.title}" - Coming to the blog section soon!`)}
+                <Link 
+                  href={`/tech-lies#${lie.title.toLowerCase().replace(/\s+/g, '-')}`}
                   className="text-secondary font-code hover:text-white transition"
                 >
                   READ FULL TAKEDOWN →
-                </button>
+                </Link>
                 <div className="flex items-center">
                   <button 
                     onClick={() => alert("👍 Thanks for agreeing this is bullshit!")}

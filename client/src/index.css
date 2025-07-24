@@ -216,4 +216,35 @@
     80% { clip-path: inset(54% 0 7% 0); }
     100% { clip-path: inset(58% 0 43% 0); }
   }
+
+  /* Fuck It Mode Styles */
+  .fuck-it-mode {
+    position: relative;
+  }
+
+  .fuck-it-mode::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 0, 0.05);
+    pointer-events: none;
+    z-index: 9999;
+    animation: fuckItFlash 2s ease-in-out infinite alternate;
+  }
+
+  .fuck-it-mode .bg-\[#121212\] {
+    background: #1a0000 !important;
+  }
+
+  .fuck-it-mode .bg-\[#181818\] {
+    background: #200000 !important;
+  }
+
+  @keyframes fuckItFlash {
+    0% { opacity: 0; }
+    100% { opacity: 0.1; }
+  }
 }

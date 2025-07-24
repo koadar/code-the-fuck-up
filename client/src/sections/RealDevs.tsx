@@ -1,6 +1,7 @@
 import TerminalBox from "@/components/ui/TerminalBox";
 import GlitchButton from "@/components/ui/GlitchButton";
 import { devStories } from "@/lib/data";
+import { Link } from "wouter";
 
 interface RealDevsProps {
   fuckItMode: boolean;
@@ -20,15 +21,14 @@ export default function RealDevs({ fuckItMode }: RealDevsProps) {
             <p className="text-gray-400 font-code">User-submitted stories of failure, burnout, breakthroughs, and the weird reality of being a developer.</p>
           </div>
           <div className="w-full md:w-1/2 md:text-right mt-6 md:mt-0">
-            <GlitchButton
-              className="bg-primary text-black font-bold py-2 px-4"
-              text="SUBMIT YOUR STORY"
-              onClick={() => {
-                alert("📝 STORY SUBMISSION: Email your dev horror stories to stories@codethefuckup.com!");
-              }}
-            >
-              SUBMIT YOUR STORY <i className="ri-arrow-right-line ml-1"></i>
-            </GlitchButton>
+            <Link href="/submit-story">
+              <GlitchButton
+                className="bg-primary text-black font-bold py-2 px-4"
+                text="SUBMIT YOUR STORY"
+              >
+                SUBMIT YOUR STORY <i className="ri-arrow-right-line ml-1"></i>
+              </GlitchButton>
+            </Link>
           </div>
         </div>
 

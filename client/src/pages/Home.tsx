@@ -17,10 +17,11 @@ export default function Home() {
     const newMode = !fuckItMode;
     setFuckItMode(newMode);
     
+    // Change page theme when fuck it mode is on
     if (newMode) {
-      alert("🔥 FUCK IT MODE ACTIVATED! Showing uncensored content, extra spicy rants, and no-holds-barred dev reality!");
+      document.body.classList.add('fuck-it-mode');
     } else {
-      alert("😌 Back to regular mode. Thanks for the wild ride!");
+      document.body.classList.remove('fuck-it-mode');
     }
   };
 

@@ -2,6 +2,7 @@ import TerminalBox from "@/components/ui/TerminalBox";
 import BlogCard from "@/components/ui/BlogCard";
 import { useEffect, useState } from "react";
 import { hotRants } from "@/lib/data";
+import { Link } from "wouter";
 
 interface HotRantsProps {
   fuckItMode: boolean;
@@ -46,16 +47,13 @@ export default function HotRants({ fuckItMode }: HotRantsProps) {
             <p className="text-gray-400 font-code">Raw blog posts about the real dev life, no filter, no bullshit.</p>
           </div>
           <div className="w-full md:w-1/2 md:text-right mt-6 md:mt-0">
-            <button 
-              onClick={() => {
-                // Could navigate to a dedicated rants page in the future
-                alert("🔥 COMING SOON: Full rants archive with filter by anger level!");
-              }}
+            <Link
+              href="/rants"
               className="inline-flex items-center text-secondary hover:text-white transition duration-200"
             >
               <span className="mr-2 font-code">VIEW ALL RANTS</span>
               <i className="ri-arrow-right-line"></i>
-            </button>
+            </Link>
           </div>
         </div>
 
