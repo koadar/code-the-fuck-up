@@ -33,23 +33,52 @@ export default function CringeGallery({ fuckItMode }: CringeGalleryProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {cringeGallery.map((item, index) => (
-            <div key={index} className="bg-[#1a1a1a] rounded-lg overflow-hidden shadow-lg">
+            <div 
+              key={index} 
+              className="bg-[#1a1a1a] rounded-lg overflow-hidden shadow-lg cursor-pointer hover:bg-[#222] transition-colors group"
+              onClick={() => {
+                alert(`💀 CRINGE LEVEL: MAXIMUM\n\n"${item.title}"\n\n${item.description}\n\nSubmitted by @${item.submittedBy}\n\nThis is the kind of content that makes experienced developers question their career choices. Share this digital horror with your fellow devs!`);
+              }}
+            >
               <ImageGlitch
                 src={item.image}
                 alt={item.title}
-                imageClassName="w-full h-48 object-cover"
+                imageClassName="w-full h-48 object-cover group-hover:scale-105 transition-transform"
               />
               <div className="p-4">
-                <h4 className="font-mono text-white font-bold mb-2">{item.title}</h4>
+                <h4 className="font-mono text-white font-bold mb-2 group-hover:text-primary transition-colors">{item.title}</h4>
                 <p className="text-gray-400 text-sm font-code mb-3">{item.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500 font-code">Submitted by <span className="text-secondary">@{item.submittedBy}</span></span>
-                  <button 
-                    onClick={() => alert("💀 This made you die inside too!")}
-                    className="text-gray-400 hover:text-primary"
-                  >
-                    <i className="ri-skull-fill"></i>
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        alert("💀 This made you die inside too! Your soul has been added to the cringe counter.");
+                      }}
+                      className="text-gray-400 hover:text-primary"
+                    >
+                      <i className="ri-skull-fill"></i>
+                    </button>
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (navigator.share) {
+                          navigator.share({
+                            title: item.title,
+                            text: `Check out this cringe: ${item.description}`,
+                            url: window.location.href
+                          });
+                        } else {
+                          navigator.clipboard.writeText(`${item.title}: ${item.description} - ${window.location.href}`);
+                          alert("📋 Cringe copied! Spread the second-hand embarrassment.");
+                        }
+                      }}
+                      className="text-gray-400 hover:text-secondary"
+                    >
+                      <i className="ri-share-line"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

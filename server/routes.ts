@@ -200,6 +200,104 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
+  // Feature routes
+  app.post("/api/features/rage-mode", async (req, res) => {
+    try {
+      const { enabled } = req.body;
+      // In a real app, this would be saved to user preferences
+      res.json({ message: `Rage mode ${enabled ? 'enabled' : 'disabled'}`, success: true });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to toggle rage mode" });
+    }
+  });
+
+  app.get("/api/features/dev-stories", async (req, res) => {
+    try {
+      const limitParam = req.query.limit as string | undefined;
+      const limit = limitParam ? parseInt(limitParam, 10) : 5;
+      
+      // Get more dev stories from storage (we'll seed some)
+      const stories = await storage.getDevStories(limit);
+      res.json(stories);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch dev stories" });
+    }
+  });
+
+  app.post("/api/features/confession", async (req, res) => {
+    try {
+      const { confession, anonymous } = req.body;
+      
+      if (!confession || confession.trim().length === 0) {
+        return res.status(400).json({ message: "Confession cannot be empty" });
+      }
+      
+      // In a real app, this would be saved to the database
+      const confessionEntry = {
+        id: Date.now(),
+        content: confession,
+        anonymous: anonymous !== false,
+        timestamp: new Date(),
+        category: 'dev-confession'
+      };
+      
+      res.json({ 
+        message: "Confession submitted successfully! Your sins are now part of the collective shame.", 
+        success: true,
+        confession: confessionEntry
+      });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to submit confession" });
+    }
+  });
+
+  app.get("/api/features/daily-fuckup", async (req, res) => {
+    try {
+      const fuckups = [
+        {
+          title: "Deleted production database on Friday at 5PM",
+          story: "Thought I was on staging. I wasn't. Spent the weekend in the office with the CTO breathing down my neck.",
+          author: "DeadInside_Dev",
+          timestamp: "2 days ago",
+          category: "database-disaster"
+        },
+        {
+          title: "Pushed API keys to public GitHub repo",
+          story: "Got 47 emails about AWS charges within the hour. Bitcoin miners love free compute apparently.",
+          author: "SecurityNightmare",
+          timestamp: "1 week ago", 
+          category: "security-fail"
+        },
+        {
+          title: "Deployed untested code to prod because 'it's just a small change'",
+          story: "Site was down for 3 hours during Black Friday. I learned what a rollback is that day.",
+          author: "ProductionWarrior",
+          timestamp: "3 days ago",
+          category: "deployment-disaster"
+        },
+        {
+          title: "Told client the feature would take 2 days, took 2 months",
+          story: "Turns out 'simple contact form' meant 'full CRM with AI integration and blockchain.' Who knew?",
+          author: "ScopeCreepVictim",
+          timestamp: "1 month ago",
+          category: "estimation-fail"
+        },
+        {
+          title: "Used git force push on main branch",
+          story: "Overwrote 2 weeks of team work. Git history said goodbye. Team said goodbye to me.",
+          author: "GitDestroyer",
+          timestamp: "5 days ago",
+          category: "git-disaster"
+        }
+      ];
+      
+      const randomFuckup = fuckups[Math.floor(Math.random() * fuckups.length)];
+      res.json(randomFuckup);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to generate daily fuckup" });
+    }
+  });
+
   // Users routes (auth would be added in a real implementation)
   app.post("/api/users", async (req, res) => {
     try {

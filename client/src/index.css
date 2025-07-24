@@ -122,6 +122,56 @@
     animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
   }
 
+  /* Fuck It Mode Styles */
+  body.fuck-it-mode {
+    @apply bg-red-950 text-red-100;
+  }
+  
+  body.fuck-it-mode .nav-link:hover::before {
+    @apply bg-red-500;
+  }
+  
+  body.fuck-it-mode .text-primary {
+    @apply text-red-400;
+  }
+  
+  body.fuck-it-mode .text-secondary {
+    @apply text-red-300;
+  }
+  
+  body.fuck-it-mode .bg-[#121212] {
+    @apply bg-red-950;
+  }
+  
+  body.fuck-it-mode .bg-[#1a1a1a] {
+    @apply bg-red-900;
+  }
+  
+  body.fuck-it-mode .bg-[#181818] {
+    @apply bg-red-900;
+  }
+  
+  body.fuck-it-mode .border-primary {
+    @apply border-red-500;
+  }
+  
+  body.fuck-it-mode .glitch-hover:hover {
+    text-shadow: 2px 2px #ff0000, -2px -2px #ff6666;
+    @apply animate-pulse;
+  }
+  
+  body.fuck-it-mode .bg-primary {
+    @apply bg-red-600;
+  }
+  
+  body.fuck-it-mode .hover\:text-primary:hover {
+    @apply text-red-400;
+  }
+  
+  body.fuck-it-mode .hover\:text-secondary:hover {
+    @apply text-red-300;
+  }
+
   /* Glitch Button Effects */
   .glitch-btn:hover::before {
     content: attr(data-text);

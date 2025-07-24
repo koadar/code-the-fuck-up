@@ -26,6 +26,28 @@ export default function HotRants({ fuckItMode }: HotRantsProps) {
             image: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=150",
             username: "DeployYolo"
           }
+        },
+        {
+          title: "🔥 FUCK IT MODE: I DELETED THE ENTIRE PRODUCTION DATABASE",
+          excerpt: "rm -rf * seemed like a good idea at 3am. Plot twist: it wasn't. The backup was corrupted. I'm typing this from my cardboard box under the bridge.",
+          timeAgo: "1 hour ago",
+          heatCount: 666,
+          author: {
+            name: "Database Destroyer",
+            image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=150",
+            username: "DbDestroyer"
+          }
+        },
+        {
+          title: "🔥 FUCK IT MODE: TOLD THE CEO THE TRUTH ABOUT OUR CODE",
+          excerpt: "When asked about our 'robust architecture', I said 'It's held together with duct tape and prayer.' Got fired. Worth it. Our codebase was legitimately a war crime.",
+          timeAgo: "30 minutes ago",
+          heatCount: 1337,
+          author: {
+            name: "Truth Teller",
+            image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150",
+            username: "TruthBomber"
+          }
         }
       ];
       setRants(extremeRants);

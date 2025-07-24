@@ -42,7 +42,7 @@ export const comments = pgTable("comments", {
   content: text("content").notNull(),
   post_id: integer("post_id").references(() => posts.id).notNull(),
   author_id: integer("author_id").references(() => users.id).notNull(),
-  parent_id: integer("parent_id").references(() => comments.id),
+  parent_id: integer("parent_id"),
   rage_mode: boolean("rage_mode").default(false),
   created_at: timestamp("created_at").defaultNow().notNull(),
 });

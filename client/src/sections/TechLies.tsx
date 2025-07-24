@@ -42,19 +42,33 @@ export default function TechLies({ fuckItMode }: TechLiesProps) {
               <p className="text-gray-400 font-code mb-6">{lie.content}</p>
               <div className="flex items-center justify-between">
                 <Link 
-                  href={`/tech-lies#${lie.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={`/tech-lies/${lie.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                   className="text-secondary font-code hover:text-white transition"
                 >
                   READ FULL TAKEDOWN →
                 </Link>
-                <div className="flex items-center">
+                <div className="flex items-center gap-4">
                   <button 
-                    onClick={() => alert("👍 Thanks for agreeing this is bullshit!")}
-                    className="mr-3 text-gray-400 hover:text-primary"
+                    onClick={() => alert("👍 Thanks for agreeing this is bullshit! Your validation helps us fight the tech industry's reality distortion field.")}
+                    className="text-gray-400 hover:text-primary flex items-center gap-1"
                   >
                     <i className="ri-thumb-up-line"></i>
+                    <span className="text-sm">{lie.likes}</span>
                   </button>
-                  <span className="text-gray-500 text-sm">{lie.likes}</span>
+                  <button 
+                    onClick={() => {
+                      const responses = [
+                        "Been burned by this lie too? Share your painful story!",
+                        "Know more examples of this bullshit in action? Submit them!",
+                        "Help us expose more lies like this - submit your evidence!",
+                        "This lie cost you time/money? Share the damage report!"
+                      ];
+                      alert(responses[Math.floor(Math.random() * responses.length)]);
+                    }}
+                    className="text-secondary font-code hover:text-white text-sm"
+                  >
+                    SHARE YOUR PAIN →
+                  </button>
                 </div>
               </div>
             </div>

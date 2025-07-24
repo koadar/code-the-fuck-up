@@ -40,6 +40,10 @@ export interface IStorage {
   getCategoryBySlug(slug: string): Category | undefined;
   getCategories(): Category[];
   createCategory(category: InsertCategory): Category;
+  
+  // Dev stories methods
+  getDevStories(limit?: number): any[];
+  createDevStory(story: any): any;
 }
 
 export class MemStorage implements IStorage {
@@ -48,12 +52,14 @@ export class MemStorage implements IStorage {
   private comments: Map<number, Comment>;
   private galleryItems: Map<number, GalleryItem>;
   private categories: Map<number, Category>;
+  private devStories: Map<number, any>;
   
   private userIdCounter: number;
   private postIdCounter: number;
   private commentIdCounter: number;
   private galleryIdCounter: number;
   private categoryIdCounter: number;
+  private devStoryIdCounter: number;
 
   constructor() {
     this.users = new Map();
@@ -61,15 +67,18 @@ export class MemStorage implements IStorage {
     this.comments = new Map();
     this.galleryItems = new Map();
     this.categories = new Map();
+    this.devStories = new Map();
     
     this.userIdCounter = 1;
     this.postIdCounter = 1;
     this.commentIdCounter = 1;
     this.galleryIdCounter = 1;
     this.categoryIdCounter = 1;
+    this.devStoryIdCounter = 1;
     
-    // Initialize with some default categories
+    // Initialize with some default categories and stories
     this.seedCategories();
+    this.seedDevStories();
   }
 
   // User methods
@@ -92,7 +101,14 @@ export class MemStorage implements IStorage {
   createUser(insertUser: InsertUser): User {
     const id = this.userIdCounter++;
     const now = new Date();
-    const user = { ...insertUser, id, created_at: now };
+    const user: User = { 
+      ...insertUser, 
+      id, 
+      created_at: now,
+      displayName: insertUser.displayName ?? null,
+      avatar: insertUser.avatar ?? null,
+      bio: insertUser.bio ?? null
+    };
     this.users.set(id, user);
     return user;
   }
@@ -125,14 +141,23 @@ export class MemStorage implements IStorage {
   getHotPosts(limit = 10): Post[] {
     return Array.from(this.posts.values())
       .filter(post => post.published)
-      .sort((a, b) => b.heat_count - a.heat_count)
+      .sort((a, b) => (b.heat_count ?? 0) - (a.heat_count ?? 0))
       .slice(0, limit);
   }
   
   createPost(insertPost: InsertPost): Post {
     const id = this.postIdCounter++;
     const now = new Date();
-    const post = { ...insertPost, id, created_at: now, heat_count: 0 };
+    const post: Post = { 
+      ...insertPost, 
+      id, 
+      created_at: now, 
+      heat_count: 0,
+      excerpt: insertPost.excerpt ?? null,
+      category_id: insertPost.category_id ?? null,
+      is_nsfw: insertPost.is_nsfw ?? false,
+      published: insertPost.published ?? false
+    };
     this.posts.set(id, post);
     return post;
   }
@@ -158,7 +183,7 @@ export class MemStorage implements IStorage {
       return false;
     }
     
-    post.heat_count += 1;
+    post.heat_count = (post.heat_count ?? 0) + 1;
     this.posts.set(id, post);
     return true;
   }
@@ -177,7 +202,13 @@ export class MemStorage implements IStorage {
   createComment(insertComment: InsertComment): Comment {
     const id = this.commentIdCounter++;
     const now = new Date();
-    const comment = { ...insertComment, id, created_at: now };
+    const comment: Comment = { 
+      ...insertComment, 
+      id, 
+      created_at: now,
+      parent_id: insertComment.parent_id ?? null,
+      rage_mode: insertComment.rage_mode ?? false
+    };
     this.comments.set(id, comment);
     return comment;
   }
@@ -241,6 +272,87 @@ export class MemStorage implements IStorage {
     
     defaultCategories.forEach((cat) => {
       this.createCategory(cat);
+    });
+  }
+  
+  // Dev stories methods
+  getDevStories(limit = 5): any[] {
+    return Array.from(this.devStories.values())
+      .sort((a, b) => b.created_at.getTime() - a.created_at.getTime())
+      .slice(0, limit);
+  }
+  
+  createDevStory(insertStory: any): any {
+    const id = this.devStoryIdCounter++;
+    const now = new Date();
+    const story = { ...insertStory, id, created_at: now };
+    this.devStories.set(id, story);
+    return story;
+  }
+  
+  private seedDevStories() {
+    const defaultStories = [
+      {
+        title: "THE DAY I LEARNED WHAT TECHNICAL DEBT REALLY MEANS",
+        content: `
+          <p>I inherited a codebase that looked like it was written by someone having a stroke while riding a rollercoaster.</p>
+          <p>Comments like "// TODO: Fix this hack later" from 2018. Functions named 'doStuff()' and 'handleThing()'. A single file with 3,000 lines of uncommented spaghetti code.</p>
+          <p>The previous dev had left detailed notes: "Good luck, you'll need it. -Dave"</p>
+          <p>Six months later, I finally understood why Dave left. That codebase was a digital haunted house. Every fix broke three other things. Every feature request required archaeological excavation through layers of hacks built on hacks.</p>
+          <p>I rewrote the whole thing. Took 4 months. Worth every sleepless night.</p>
+        `,
+        timeAgo: "1 week ago",
+        likes: 523,
+        comments: 67,
+        author: {
+          name: "Refactor Hero",
+          image: "https://images.pexels.com/photos/1181267/pexels-photo-1181267.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&dpr=1",
+          username: "refactor_hero"
+        }
+      },
+      {
+        title: "I SHIPPED A BUG THAT MADE US $50K",
+        content: `
+          <p>Working on an e-commerce site, I accidentally removed a validation check in the checkout process.</p>
+          <p>Instead of preventing multiple submissions, it started accepting them. Customers could click "Buy Now" multiple times and get charged multiple times.</p>
+          <p>I discovered this at 2 AM when monitoring alerts went crazy. Panic mode: ENGAGED.</p>
+          <p>Plot twist: Customers weren't complaining. They were buying gift cards for friends and family by accident, then keeping them or giving them away.</p>
+          <p>Sales went up 300% that weekend. Management called it a "feature" and asked me to make it permanent.</p>
+          <p>Sometimes breaking things makes things better. Still confused about that one.</p>
+        `,
+        timeAgo: "3 days ago", 
+        likes: 891,
+        comments: 134,
+        author: {
+          name: "Accidental Genius",
+          image: "https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&dpr=1",
+          username: "accident_genius"
+        }
+      },
+      {
+        title: "THE GREAT AWS BILL DISASTER OF 2024",
+        content: `
+          <p>Started a new job, eager to impress. CTO gives me AWS access: "Just spin up a small instance for testing."</p>
+          <p>I spun up what I thought was a t2.micro. It was a p3.16xlarge. With 8 Tesla V100 GPUs. Running 24/7. For machine learning I didn't even need.</p>
+          <p>Cost: $24/hour. I left it running for 3 weeks.</p>
+          <p>Bill: $12,096</p>
+          <p>My reaction: 💀</p>
+          <p>CTO's reaction: "Well, at least you learned about AWS pricing the hard way."</p>
+          <p>I spent the next month writing cost monitoring scripts. Never again.</p>
+        `,
+        timeAgo: "5 days ago",
+        likes: 1247,
+        comments: 203,
+        author: {
+          name: "AWS Survivor",
+          image: "https://images.pexels.com/photos/3772631/pexels-photo-3772631.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&dpr=1",
+          username: "aws_survivor"
+        }
+      }
+    ];
+    
+    defaultStories.forEach((story) => {
+      this.createDevStory(story);
     });
   }
 }
