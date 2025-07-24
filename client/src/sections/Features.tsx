@@ -51,7 +51,12 @@ export default function Features() {
                   {feature.buttonText}
                 </button>
               ) : (
-                <a href="#" className="text-secondary font-code hover:text-white transition text-sm">{feature.buttonText}</a>
+                <button 
+                  onClick={() => alert(`🔧 ${feature.title}: ${feature.description} - Coming soon!`)}
+                  className="text-secondary font-code hover:text-white transition text-sm"
+                >
+                  {feature.buttonText}
+                </button>
               )}
             </div>
           ))}

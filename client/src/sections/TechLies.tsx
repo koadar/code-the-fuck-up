@@ -19,10 +19,15 @@ export default function TechLies({ fuckItMode }: TechLiesProps) {
             <p className="text-gray-400 font-code">Busting myths, influencer lies, and fake job titles one painful truth at a time.</p>
           </div>
           <div className="w-full md:w-1/2 md:text-right mt-6 md:mt-0">
-            <a href="#" className="inline-flex items-center text-secondary hover:text-white transition duration-200">
+            <button 
+              onClick={() => {
+                alert("💀 COMING SOON: Complete database of industry bullshit with lie severity ratings!");
+              }}
+              className="inline-flex items-center text-secondary hover:text-white transition duration-200"
+            >
               <span className="mr-2 font-code">VIEW ALL TECH LIES</span>
               <i className="ri-arrow-right-line"></i>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -37,9 +42,17 @@ export default function TechLies({ fuckItMode }: TechLiesProps) {
               </div>
               <p className="text-gray-400 font-code mb-6">{lie.content}</p>
               <div className="flex items-center justify-between">
-                <a href="#" className="text-secondary font-code hover:text-white transition">READ FULL TAKEDOWN →</a>
+                <button 
+                  onClick={() => alert(`📖 FULL TAKEDOWN: "${lie.title}" - Coming to the blog section soon!`)}
+                  className="text-secondary font-code hover:text-white transition"
+                >
+                  READ FULL TAKEDOWN →
+                </button>
                 <div className="flex items-center">
-                  <button className="mr-3 text-gray-400 hover:text-primary">
+                  <button 
+                    onClick={() => alert("👍 Thanks for agreeing this is bullshit!")}
+                    className="mr-3 text-gray-400 hover:text-primary"
+                  >
                     <i className="ri-thumb-up-line"></i>
                   </button>
                   <span className="text-gray-500 text-sm">{lie.likes}</span>

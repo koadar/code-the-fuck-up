@@ -13,9 +13,20 @@ import { useState } from "react";
 export default function Home() {
   const [fuckItMode, setFuckItMode] = useState(false);
 
+  const toggleFuckItMode = () => {
+    const newMode = !fuckItMode;
+    setFuckItMode(newMode);
+    
+    if (newMode) {
+      alert("🔥 FUCK IT MODE ACTIVATED! Showing uncensored content, extra spicy rants, and no-holds-barred dev reality!");
+    } else {
+      alert("😌 Back to regular mode. Thanks for the wild ride!");
+    }
+  };
+
   return (
     <>
-      <Navbar fuckItMode={fuckItMode} toggleFuckItMode={() => setFuckItMode(!fuckItMode)} />
+      <Navbar fuckItMode={fuckItMode} toggleFuckItMode={toggleFuckItMode} />
       <main>
         <Hero />
         <section id="hot-rants">

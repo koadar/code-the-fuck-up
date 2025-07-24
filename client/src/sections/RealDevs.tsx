@@ -23,7 +23,9 @@ export default function RealDevs({ fuckItMode }: RealDevsProps) {
             <GlitchButton
               className="bg-primary text-black font-bold py-2 px-4"
               text="SUBMIT YOUR STORY"
-              onClick={() => {}}
+              onClick={() => {
+                alert("📝 STORY SUBMISSION: Email your dev horror stories to stories@codethefuckup.com!");
+              }}
             >
               SUBMIT YOUR STORY <i className="ri-arrow-right-line ml-1"></i>
             </GlitchButton>
@@ -44,23 +46,46 @@ export default function RealDevs({ fuckItMode }: RealDevsProps) {
           
           <div className="flex items-center justify-between border-t border-[#2a2a2a] pt-4">
             <div className="flex items-center">
-              <button className="flex items-center text-gray-400 hover:text-primary mr-4">
+              <button 
+                onClick={() => alert("❤️ You relate to this dev pain!")}
+                className="flex items-center text-gray-400 hover:text-primary mr-4"
+              >
                 <i className="ri-heart-line mr-1"></i>
                 <span className="text-sm">{devStories[0].likes}</span>
               </button>
-              <button className="flex items-center text-gray-400 hover:text-primary">
+              <button 
+                onClick={() => alert("💬 Comments coming soon! For now, rant about it on Twitter.")}
+                className="flex items-center text-gray-400 hover:text-primary"
+              >
                 <i className="ri-chat-1-line mr-1"></i>
                 <span className="text-sm">{devStories[0].comments}</span>
               </button>
             </div>
-            <button className="text-secondary hover:text-white font-code text-sm">
+            <button 
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({
+                    title: devStories[0].title,
+                    text: "Check out this real dev story",
+                    url: window.location.href
+                  });
+                } else {
+                  navigator.clipboard.writeText(window.location.href);
+                  alert("📋 Link copied! Share this reality check with fellow devs.");
+                }
+              }}
+              className="text-secondary hover:text-white font-code text-sm"
+            >
               SHARE THIS REALITY CHECK
             </button>
           </div>
         </div>
 
         <div className="flex justify-center">
-          <button className="border border-[#2a2a2a] text-gray-400 font-code py-3 px-6 hover:bg-[#242424] transition">
+          <button 
+            onClick={() => alert("📚 More stories loading... actually we need to build pagination first!")}
+            className="border border-[#2a2a2a] text-gray-400 font-code py-3 px-6 hover:bg-[#242424] transition"
+          >
             LOAD MORE REAL DEV STORIES
           </button>
         </div>

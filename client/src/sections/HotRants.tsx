@@ -11,11 +11,23 @@ export default function HotRants({ fuckItMode }: HotRantsProps) {
   const [rants, setRants] = useState(hotRants);
   
   useEffect(() => {
-    // In fuck it mode, we could show more extreme content
     if (fuckItMode) {
-      // This is where we would load the more extreme content if we had it
-      // For now we'll just keep the same content
-      setRants(hotRants);
+      // Add some extra spicy content for fuck it mode
+      const extremeRants = [
+        ...hotRants,
+        {
+          title: "🔥 FUCK IT MODE: Why I Deployed on Friday",
+          excerpt: "Everyone said don't deploy on Friday. I said fuck it and pushed anyway. Spoiler: It broke everything and I spent the weekend fixing it. Would I do it again? Absolutely.",
+          timeAgo: "2 hours ago",
+          heatCount: 420,
+          author: {
+            name: "Deploy Yolo",
+            image: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=150",
+            username: "DeployYolo"
+          }
+        }
+      ];
+      setRants(extremeRants);
     } else {
       setRants(hotRants);
     }
@@ -34,10 +46,16 @@ export default function HotRants({ fuckItMode }: HotRantsProps) {
             <p className="text-gray-400 font-code">Raw blog posts about the real dev life, no filter, no bullshit.</p>
           </div>
           <div className="w-full md:w-1/2 md:text-right mt-6 md:mt-0">
-            <a href="#" className="inline-flex items-center text-secondary hover:text-white transition duration-200">
+            <button 
+              onClick={() => {
+                // Could navigate to a dedicated rants page in the future
+                alert("🔥 COMING SOON: Full rants archive with filter by anger level!");
+              }}
+              className="inline-flex items-center text-secondary hover:text-white transition duration-200"
+            >
               <span className="mr-2 font-code">VIEW ALL RANTS</span>
               <i className="ri-arrow-right-line"></i>
-            </a>
+            </button>
           </div>
         </div>
 

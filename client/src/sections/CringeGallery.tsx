@@ -20,10 +20,15 @@ export default function CringeGallery({ fuckItMode }: CringeGalleryProps) {
             <p className="text-gray-400 font-code">Screenshots of awful LinkedIn flexes, resume disasters, and self-important tech posts that make us all die inside.</p>
           </div>
           <div className="w-full md:w-1/2 md:text-right mt-6 md:mt-0">
-            <a href="#" className="inline-flex items-center text-secondary hover:text-white transition duration-200">
+            <button 
+              onClick={() => {
+                alert("🤮 CRINGE SUBMISSION: Email your screenshots to cringe@codethefuckup.com or DM us!");
+              }}
+              className="inline-flex items-center text-secondary hover:text-white transition duration-200"
+            >
               <span className="mr-2 font-code">SUBMIT YOUR CRINGE</span>
               <i className="ri-arrow-right-line"></i>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -40,7 +45,10 @@ export default function CringeGallery({ fuckItMode }: CringeGalleryProps) {
                 <p className="text-gray-400 text-sm font-code mb-3">{item.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-gray-500 font-code">Submitted by <span className="text-secondary">@{item.submittedBy}</span></span>
-                  <button className="text-gray-400 hover:text-primary">
+                  <button 
+                    onClick={() => alert("💀 This made you die inside too!")}
+                    className="text-gray-400 hover:text-primary"
+                  >
                     <i className="ri-skull-fill"></i>
                   </button>
                 </div>

@@ -68,11 +68,11 @@ export default function Navbar({ fuckItMode, toggleFuckItMode }: NavbarProps) {
         <div className="flex items-center">
           <GlitchButton 
             onClick={toggleFuckItMode}
-            className="hidden md:flex items-center bg-primary text-black font-bold py-2 px-4 mr-2"
-            text="FUCK IT MODE"
+            className={`hidden md:flex items-center font-bold py-2 px-4 mr-2 ${fuckItMode ? 'bg-destructive text-white' : 'bg-primary text-black'}`}
+            text={fuckItMode ? "FUCK IT MODE: ON" : "FUCK IT MODE"}
           >
-            FUCK IT MODE
-            <i className="ri-fire-fill ml-1"></i>
+            {fuckItMode ? "FUCK IT MODE: ON" : "FUCK IT MODE"}
+            <i className={`ml-1 ${fuckItMode ? 'ri-fire-fill animate-pulse' : 'ri-fire-fill'}`}></i>
           </GlitchButton>
           <button 
             className="md:hidden text-white"

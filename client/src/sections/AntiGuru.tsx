@@ -51,7 +51,9 @@ export default function AntiGuru() {
                   <GlitchButton
                     className="bg-primary text-black font-bold py-2 px-6"
                     text={guru.buttonText}
-                    onClick={() => {}}
+                    onClick={() => {
+                      alert(`🎭 PARODY COURSE: "${guru.title}" - This is satire! Real courses coming to the platform soon.`);
+                    }}
                   >
                     {guru.buttonText}
                   </GlitchButton>
