@@ -12,69 +12,63 @@ export const hotRants = [
     },
     category: "INDUSTRY EXPOSE",
     fullContent: `
-# LPA: Lies Per Annum - The ₹80 LPA Scam Exposed
-
-**TL;DR** – If you slap "₹80 LPA" on a YouTube thumbnail without showing the cold, crusty pay-slip, you're not educating aspirants—you're peddling delusions for clicks. Stop it, or keep doing it and enjoy this digital Molotov cocktail in your comments.
-
-## Welcome to the Circus of Comp Packages
-
-Look, I get it. "Lakhs Per Annum" sounds sexier than "CTC if, maybe, the stars align and HR doesn't change policy halfway through Q3." It's the influencer equivalent of those real-estate flyers that start with "ONLY ₹99 LACS"*—the asterisk is silent but deadly.
-
+LPA: Lies Per Annum
+TL;DR – If you slap “₹80 LPA” on a YouTube thumbnail without showing the cold, crusty
+pay-slip, you’re not educating aspirants—you’re peddling delusions for clicks. Stop it, or keep
+doing it and enjoy this digital Molotov cocktail in your comments.
+Welcome to the Circus of Comp Packages
+Look, I get it. “Lakhs Per Annum” sounds sexier than “CTC if, maybe, the stars align and HR
+doesn’t change policy halfway through Q3.” It’s the influencer equivalent of those real-estate
+flyers that start with “ONLY ₹99 LACS”*—the asterisk is silent but deadly.
 The formula seems simple:
-
-**Inflated LPA = (Actual Fixed Pay) + (Variable That Never Vests) + (Signing Bonus You Have to Repay If You Breathe Funny) + (ESOPs You'll Exercise in 2078)**
-
-Round it up, slap it on Canva, pose with crossed arms, sprinkle emojis, and boom—instant dopamine buffet for job-hungry graduates.
-
-## "But Bro, It's Technically Correct!"
-
-Yes, "technically correct" the same way a roadside vendor selling "pure cow ghee" in a reused shampoo bottle is technically correct—the bottle did once see shampoo. You're banking on jargon confusion:
-
-### Buzzword Reality Check
-- **LPA**: Lakhs Promised Annually, a fantasy figure pre-tax, pre-PF, pre-everything.
-- **CTC**: Costs The Company—translation: Budgets you'll never touch (hello, office cab allowance you can't claim WFH).
-- **In-hand**: The money that actually lands before rent, mutual funds, and the chai tapri. Usually 55-65% of the click-bait number.
-
-## Why This Scam Works
-
-- **Vanity metrics rule LinkedIn feeds**: People share offer letters like they're Oscar trophies.
-- **FOMO sells courses**: "This student cracked ₹1 Cr package after my ₹4,999 résumé workshop!" Sure, buddy. Show me her revised payslip after relocation costs.
-- **Algorithm worship**: Anger + aspiration = engagement. And engagement = AdSense rupees. Simple.
-
-## The Human Fallout
-
-- Freshers torching their mental health trying to chase an 80 LPA mirage when the median take-home might be ₹45k/month.
-- Parents re-mortgaging houses to fund coding bootcamps marketed with those inflated numbers.
-- Mid-career devs feeling like failures for a perfectly respectable 25 LPA fixed.
-
-Congrats, "influencers"—your thumbnails are the new unattainable Instagram beach body.
-
-## My Prescription (Spoiler: It Still Lets You Make Money)
-
-- **Show the math**: One screenshot of the salary break-up > 1,000 reaction-baiting arrows on a thumbnail.
-- **Use monthly in-hand as the headline**: That's what pays rent, not phantom ESOPs.
-- **Separate fixed vs. variable**: If the variable is tied to EBITA you don't influence, stop pretending it's guaranteed.
-- **If you must flex—flex transparency**: You'll stand out in a sea of pixel-pumped numbers.
-
-Or keep lying. Just don't whine about hate comments. You earned every syllable.
-
-## Final Roast for the Road
-
-"Yo bro, but it's just marketing!"
-
-If your "marketing" relies on half-truths, congratulations—you're not a creator, you're a diet Ponzi schemer with a ring light. Pack up the ring light, learn basic arithmetic, and maybe—just maybe—try being as passionate about accuracy as you are about affiliate links.
-
-## Call-out to Readers
-
-Seen a wild "₹1 Cr LPA" claim lately? Drop the link below; let's fact-check it with the same gusto we reserve for Big Boss spoilers. Nothing heals collective delusion like public spreadsheets.
-
-## Bottom Line
-
-"Lakhs Per Annum" is a metric, but it sure as hell isn't your metric until the money kisses your bank account. Until then, it's just another number influencers stretch like cheap pizza cheese to keep you drooling.
-
----
-
-*Share this post with every aspiring developer getting fooled by inflated salary promises. It's time to call out the bullshit.*
+Inflated LPA = (Actual Fixed Pay) + (Variable That Never Vests) + (Signing Bonus You Have to
+Repay If You Breathe Funny) + (ESOPs You’ll Exercise in 2078)
+Round it up, slap it on Canva, pose with crossed arms, sprinkle emojis, and boom—instant
+dopamine buffet for job-hungry graduates.
+“But Bro, It’s Technically Correct!”
+Yes, “technically correct” the same way a roadside vendor selling “pure cow ghee” in a reused
+shampoo bottle is technically correct—the bottle did once see shampoo. You’re banking on
+jargon confusion:
+Buzzword Reality Check
+● LPA Lakhs Promised Annually, a fantasy figure pre-tax, pre-PF, pre-everything.
+● CTC Costs The Company—translation: Budgets you’ll never touch (hello, office cab
+allowance you can’t claim WFH).
+● In-hand The money that actually lands before rent, mutual funds, and the chai tapri.
+Usually 55-65 % of the click-bait number.
+Why This Scam Works
+● Vanity metrics rule LinkedIn feeds: People share offer letters like they’re Oscar
+trophies.
+● FOMO sells courses: “This student cracked ₹1 Cr package after my ₹4,999 résumé
+workshop!” Sure, buddy. Show me her revised payslip after relocation costs.
+● Algorithm worship: Anger + aspiration = engagement. And engagement = AdSense
+rupees. Simple.
+The Human Fallout
+● Freshers torching their mental health trying to chase an 80 LPA mirage when the median
+take-home might be ₹45k/month.
+● Parents re-mortgaging houses to fund coding bootcamps marketed with those inflated
+numbers.
+● Mid-career devs feeling like failures for a perfectly respectable 25 LPA fixed.
+Congrats, “influencers”—your thumbnails are the new unattainable Instagram beach body.
+My Prescription (Spoiler: It Still Lets You Make Money)
+● Show the math. One screenshot of the salary break-up > 1,000 reaction-baiting arrows
+on a thumbnail.
+● Use monthly in-hand as the headline. That’s what pays rent, not phantom ESOPs.
+● Separate fixed vs. variable. If the variable is tied to EBITA you don’t influence, stop
+pretending it’s guaranteed.
+● If you must flex—flex transparency. You’ll stand out in a sea of pixel-pumped numbers.
+Or keep lying. Just don’t whine about hate comments. You earned every syllable.
+Final Roast for the Road
+“Yo bro, but it’s just marketing!”
+If your “marketing” relies on half-truths, congratulations—you’re not a creator, you’re a diet
+Ponzi schemer with a ring light. Pack up the ring light, learn basic arithmetic, and maybe—just
+maybe—try being as passionate about accuracy as you are about affiliate links.
+Call-out to Readers
+Seen a wild “₹1 Cr LPA” claim lately? Drop the link below; let’s fact-check it with the same gusto
+we reserve for Big Boss spoilers. Nothing heals collective delusion like public spreadsheets.
+Bottom Line
+“Lakhs Per Annum” is a metric, but it sure as hell isn’t your metric until the money kisses your
+bank account. Until then, it’s just another number influencers stretch like cheap pizza cheese to
+keep you drooling.
 `
   },
   {

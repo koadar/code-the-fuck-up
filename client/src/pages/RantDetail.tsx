@@ -3,6 +3,7 @@ import { Link, useParams } from "wouter";
 import { hotRants } from "@/lib/data";
 import TerminalBox from "@/components/ui/TerminalBox";
 import GlitchButton from "@/components/ui/GlitchButton";
+import { markdownToHtml } from "@/lib/markdown";
 
 export default function RantDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -10,6 +11,7 @@ export default function RantDetail() {
   const [comments, setComments] = useState<any[]>([]);
   const [newComment, setNewComment] = useState("");
   const [liked, setLiked] = useState(false);
+  const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
     // Find the rant by slug
@@ -18,10 +20,10 @@ export default function RantDetail() {
     );
     
     if (foundRant) {
-      setRant({
-        ...foundRant,
-        fullContent: generateFullContent(foundRant)
-      });
+      setRant(foundRant);
+      const content =
+        foundRant.fullContent || generateFullContent(foundRant);
+      setHtmlContent(markdownToHtml(content));
       
       // Load mock comments
       setComments([
@@ -150,9 +152,10 @@ ${rant.author.name}
           </div>
 
           <div className="prose prose-invert max-w-none">
-            <div className="whitespace-pre-wrap font-code text-gray-300 leading-relaxed">
-              {rant.fullContent}
-            </div>
+            <div
+              className="whitespace-pre-wrap font-code text-gray-300 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: htmlContent }}
+            />
           </div>
         </article>
 

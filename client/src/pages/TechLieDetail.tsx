@@ -3,11 +3,13 @@ import { Link, useParams } from "wouter";
 import { techLies } from "@/lib/data";
 import TerminalBox from "@/components/ui/TerminalBox";
 import GlitchButton from "@/components/ui/GlitchButton";
+import { markdownToHtml } from "@/lib/markdown";
 
 export default function TechLieDetail() {
   const { slug } = useParams<{ slug: string }>();
   const [lie, setLie] = useState<any>(null);
   const [voted, setVoted] = useState(false);
+  const [htmlContent, setHtmlContent] = useState("");
 
   useEffect(() => {
     // Find the lie by slug
@@ -16,10 +18,10 @@ export default function TechLieDetail() {
     );
     
     if (foundLie) {
-      setLie({
-        ...foundLie,
-        fullTakedown: generateFullTakedown(foundLie)
-      });
+      setLie(foundLie);
+      const content =
+        (foundLie as any).fullTakedown || generateFullTakedown(foundLie);
+      setHtmlContent(markdownToHtml(content));
     }
   }, [slug]);
 
@@ -151,9 +153,10 @@ Stop chasing every shiny new thing. Master the fundamentals. Build stuff that wo
           </div>
 
           <div className="prose prose-invert max-w-none">
-            <div className="whitespace-pre-wrap font-code text-gray-300 leading-relaxed">
-              {lie.fullTakedown}
-            </div>
+            <div
+              className="whitespace-pre-wrap font-code text-gray-300 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: htmlContent }}
+            />
           </div>
         </article>
 
